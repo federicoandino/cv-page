@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Federico Andino</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-gray-900 py-12">
+
+  <!-- Narrow wrapper for header + bio + other sections -->
+  <div class="max-w-2xl mx-auto px-8">
+
+    <!-- Header -->
+    <div class="flex items-start justify-between mb-8">
+      <div class="flex items-center gap-4">
+        <div class="w-16 h-16 rounded-full bg-gray-200 overflow-hidden flex-shrink-0">
+          <img src="avatar.png" alt="Federico Andino" class="w-full h-full object-cover" />
+        </div>
+        <h1 class="text-5xl font-bold">Federico Andino</h1>
+      </div>
+      <div class="flex items-center gap-2 mt-2">
+        <a href="https://linkedin.com/in/andinofederico" target="_blank" class="text-gray-400 hover:text-gray-900 bg-gray-50 p-2 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="mailto:federicoiandino@gmail.com" class="text-gray-400 hover:text-gray-900 bg-gray-50 p-2 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div class="mb-12">
+      <p class="text-2xl text-gray-900 mb-1">Product and eCommerce Specialist from Argentina.</p>
+      <p class="text-2xl text-gray-400">I like to build solutions for real problems.</p>
+    </div>
+
+    <!-- Experience heading + list inside same max-w-2xl container for alignment -->
+    <h2 class="text-3xl font-bold mb-6">Experience</h2>
+
+    <!-- Relative wrapper so detail panel can be absolutely positioned -->
+    <div class="relative mb-12" onmouseleave="clearJob()">
+
+      <!-- Job list: full width, never compressed -->
+      <div class="space-y-1" id="job-list">
+
+        <button onmouseenter="hoverJob(this, 'job-0')" data-job="job-0"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">MercadoLibre</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2025 — Present</span>
+          </div>
+          <p class="text-gray-500 mt-1">Product Specialist</p>
+        </button>
+
+        <button onmouseenter="hoverJob(this, 'job-1')" data-job="job-1"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">WoowUp</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2022 — 2025</span>
+          </div>
+          <p class="text-gray-500 mt-1">Lead Product Owner</p>
+          <p class="text-gray-400 text-sm italic mt-0.5">CRM & marketing automation</p>
+        </button>
+
+        <button onmouseenter="hoverJob(this, 'job-2')" data-job="job-2"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">Glamit</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2020 — 2021</span>
+          </div>
+          <p class="text-gray-500 mt-1">Product Owner / Team Leader</p>
+          <p class="text-gray-400 text-sm italic mt-0.5">Accenture</p>
+        </button>
+
+        <button onmouseenter="hoverJob(this, 'job-3')" data-job="job-3"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">Puppis</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2017 — 2020</span>
+          </div>
+          <p class="text-gray-500 mt-1">eCommerce & Omnichannel Manager</p>
+          <p class="text-gray-400 text-sm italic mt-0.5">Pet retail chain, AR & CO</p>
+        </button>
+
+        <button onmouseenter="hoverJob(this, 'job-4')" data-job="job-4"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">Blue Star Group</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2016 — 2017</span>
+          </div>
+          <p class="text-gray-500 mt-1">eCommerce Coordinator</p>
+        </button>
+
+        <button onmouseenter="hoverJob(this, 'job-5')" data-job="job-5"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">Netshoes</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2015 — 2016</span>
+          </div>
+          <p class="text-gray-500 mt-1">Sr. Digital Marketing Analyst</p>
+        </button>
+
+        <button onmouseenter="hoverJob(this, 'job-6')" data-job="job-6"
+          class="job-btn w-full text-left px-5 py-5 rounded-2xl hover:bg-blue-50 transition-colors">
+          <div class="flex items-start justify-between gap-4">
+            <span class="font-bold text-gray-900 text-xl leading-tight">Havas Argentina</span>
+            <span class="text-gray-400 text-sm whitespace-nowrap mt-1">2014 — 2015</span>
+          </div>
+          <p class="text-gray-500 mt-1">Digital Performance Analyst</p>
+        </button>
+
+      </div>
+
+      <!-- Detail panel: absolutely positioned at right edge of container, expands freely -->
+      <div id="detail-panel" class="overflow-hidden"
+           style="position:absolute; top:0; left:100%; width:0; opacity:0; transition: width 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, top 0.2s ease;">
+        <div style="width:400px" class="pl-10">
+
+          <div id="job-0" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">MercadoLibre</h3>
+              <a href="https://www.mercadolibre.com" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Mar 2025 – present</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Lead product initiatives to improve seller onboarding and offer creation across the marketplace.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Prioritize and implement initiatives with IT, UX and business teams coordinating backlog planning and delivery.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Define product requirements, estimate impact and effort, and coordinate releases to production.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Analyze operational and product data to optimize end-to-end seller workflows and improve user experience.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Leverage AI tools to accelerate product discovery, documentation, prototyping, and operational workflows.</li>
+            </ul>
+          </div>
+
+          <div id="job-1" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">WoowUp</h3>
+              <a href="https://www.woowup.com" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Jan 2022 – Feb 2025</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Defined the product roadmap aligned with business objectives and led initiatives across the full product lifecycle.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Led discovery initiatives using Continuous Discovery to identify user problems and design impactful solutions.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Collaborated with technology and design teams to deliver improvements and iterate based on performance metrics.</li>
+            </ul>
+            <p class="mt-6 text-gray-400 text-sm italic">CRM and marketing automation platform used by retail and e-commerce brands across Latin America.</p>
+          </div>
+
+          <div id="job-2" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">Glamit <span class="font-normal text-gray-400 text-lg">(Accenture)</span></h3>
+              <a href="https://www.glamit.com.ar" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Jun 2020 – Dec 2021</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Managed backlog prioritization ensuring alignment between business goals and product development.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Worked with cross-functional teams to deliver digital products on time and within scope.</li>
+            </ul>
+          </div>
+
+          <div id="job-3" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">Puppis</h3>
+              <a href="https://www.puppis.com.ar" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Jul 2017 – Jun 2020</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Developed eCommerce channels for Puppis Argentina and Colombia, overseeing P&amp;L, budgeting and digital growth strategy.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Led a team of 13 members responsible for e-commerce operations, marketing and marketplace integrations.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Integrated physical stores with online sales, building a 360° omnichannel experience.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Elevated Puppis from store #14 to #1 in 14 months — received the Best eCommerce SME award (CACE, 2019).</li>
+            </ul>
+            <p class="mt-6 text-gray-400 text-sm italic">Pet retail chain with operations across Argentina and Colombia.</p>
+          </div>
+
+          <div id="job-4" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">Blue Star Group</h3>
+              <a href="https://www.bluestargroup.com.ar" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Jul 2016 – Jul 2017</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Led the launch of eCommerce platforms for Todomoda and Isadora and coordinated regional digital marketing including CyberMonday campaigns.</li>
+            </ul>
+          </div>
+
+          <div id="job-5" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">Netshoes</h3>
+              <a href="https://www.netshoes.com.ar" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Aug 2015 – Jul 2016</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Managed ROI-driven digital advertising strategies and affiliate networks delivering data-driven insights to optimize campaign performance.</li>
+            </ul>
+          </div>
+
+          <div id="job-6" class="job-detail hidden">
+            <div class="flex items-start justify-between">
+              <h3 class="text-2xl font-bold text-gray-900">Havas Argentina</h3>
+              <a href="https://www.havas.com" target="_blank" class="text-gray-300 hover:text-gray-500 transition-colors mt-1 ml-4 flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+            <p class="text-gray-400 text-sm mt-1">Sep 2014 – Aug 2015</p>
+            <ul class="mt-6 space-y-4 text-gray-600">
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Implemented and optimized digital advertising campaigns using Google AdWords, DoubleClick and Google Analytics.</li>
+              <li class="flex gap-3"><span class="text-gray-300 flex-shrink-0 mt-0.5">—</span>Delivered insights for major clients including Cencosud, Reckitt Benckiser, Philips and Renault.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- end experience -->
+
+    <!-- Education -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Education</h2>
+      <div class="space-y-2">
+
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all">
+          <div class="flex-1">
+            <h3 class="text-base font-semibold text-gray-900">MBA Candidate</h3>
+            <p class="text-gray-400 text-sm">Universidad Torcuato Di Tella · Expected 2026</p>
+          </div>
+        </div>
+
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all">
+          <div class="flex-1">
+            <h3 class="text-base font-semibold text-gray-900">Bachelor's in Advertising &amp; Marketing</h3>
+            <p class="text-gray-400 text-sm">Universidad de Palermo · 2013–2018</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Skills</h2>
+      <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Product Management</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Agile Methodologies</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Backlog Management</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Product Lifecycle</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Scrum</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Shape Up</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">CRM</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Marketing Automation</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">SQL Queries</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">AI-Assisted Workflows</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">eCommerce Strategy</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Omnichannel Operations</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Marketplace Management</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Digital Advertising</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Performance Marketing</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Analytics &amp; Reporting</span>
+          <span class="px-3 py-1 bg-gray-50 text-gray-600 text-sm rounded-full border border-gray-200">Team Leadership</span>
+        </div>
+        <p class="text-sm text-gray-400 font-medium mt-2">AI Tools</p>
+        <div class="flex flex-wrap gap-2 mt-2">
+          <span class="px-3 py-1 bg-gray-900 text-white text-sm rounded-full">ChatGPT</span>
+          <span class="px-3 py-1 bg-gray-900 text-white text-sm rounded-full">Claude Code</span>
+          <span class="px-3 py-1 bg-gray-900 text-white text-sm rounded-full">v0 by Vercel</span>
+          <span class="px-3 py-1 bg-gray-900 text-white text-sm rounded-full">Cursor</span>
+          <span class="px-3 py-1 bg-gray-900 text-white text-sm rounded-full">n8n Workflows</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Certifications</h2>
+      <div class="space-y-2">
+
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all">
+          <div class="flex-1">
+            <h3 class="text-base font-semibold text-gray-900">Product Analytics Micro-Certification (PAC)</h3>
+            <p class="text-gray-400 text-sm">Product School</p>
+          </div>
+        </div>
+
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all">
+          <div class="flex-1">
+            <h3 class="text-base font-semibold text-gray-900">Product Management: Innovation in Digital Products</h3>
+          </div>
+        </div>
+
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all">
+          <div class="flex-1">
+            <h3 class="text-base font-semibold text-gray-900">Executive Program in eCommerce Retail &amp; Consumer Goods</h3>
+            <p class="text-gray-400 text-sm">Ecommerce Institute · 2018–2019</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Others -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6">Others</h2>
+      <div class="space-y-2">
+
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all">
+          <div class="flex-1">
+            <h3 class="text-base font-semibold text-gray-900">Instructor — eCommerce &amp; Product Management</h3>
+            <p class="text-gray-400 text-sm">Coderhouse</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold mb-6">Languages</h2>
+      <div class="flex gap-2">
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all flex-1">
+          <div>
+            <h3 class="text-base font-semibold text-gray-900">Spanish</h3>
+            <p class="text-gray-400 text-sm">Native</p>
+          </div>
+        </div>
+        <div class="flex items-center px-6 py-4 border border-gray-200 rounded-lg hover:border-gray-300 transition-all flex-1">
+          <div>
+            <h3 class="text-base font-semibold text-gray-900">English</h3>
+            <p class="text-gray-400 text-sm">C1 — Advanced</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 pt-8 pb-4">
+      <p class="text-gray-500 text-lg mb-6">Hey, let's get in touch and grab a coffee.</p>
+      <div class="flex items-center gap-2">
+        <a href="https://linkedin.com/in/andinofederico" target="_blank" class="text-gray-400 hover:text-gray-900 bg-gray-50 p-2 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="mailto:federicoiandino@gmail.com" class="text-gray-400 hover:text-gray-900 bg-gray-50 p-2 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+      </div>
+      <p class="text-gray-300 text-xs mt-6">Buenos Aires, Argentina</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const panel = document.getElementById('detail-panel');
+
+    function hoverJob(btn, jobId) {
+      const container = panel.parentElement;
+      const topOffset = btn.getBoundingClientRect().top - container.getBoundingClientRect().top;
+
+      document.querySelectorAll('.job-detail').forEach(d => d.classList.add('hidden'));
+      document.getElementById(jobId).classList.remove('hidden');
+
+      panel.style.top = topOffset + 'px';
+      panel.style.width = '400px';
+      panel.style.opacity = '1';
+    }
+
+    function clearJob() {
+      panel.style.width = '0';
+      panel.style.opacity = '0';
+    }
+  </script>
+</body>
+</html>
